@@ -23,6 +23,9 @@ export class DocumentManagementAPI extends Construct {
             entry: path.join(__dirname, '..', 'api', 'getDocuments', 'index.ts'),
             handler: 'getDocuments',
             bundling: {
+                forceDockerBundling: false, 
+                sourceMap: true,
+                minify: true,
                 externalModules: ['aws-sdk'],
             }, 
             environment: {

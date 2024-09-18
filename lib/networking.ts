@@ -13,7 +13,7 @@ export class Networking extends Construct {
         super(scope, id);
 
         this.vpc = new ec2.Vpc(this, 'Vpc', {
-            cidr: '10.0.0.0/16',
+            ipAddresses: ec2.IpAddresses.cidr('10.0.0.0/16'),
             maxAzs: props.maxAzs,
             subnetConfiguration: [
                 {
